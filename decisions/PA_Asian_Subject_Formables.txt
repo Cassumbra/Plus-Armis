@@ -1,0 +1,381 @@
+country_decisions = {
+	
+	PA_unite_goguryeo_subject = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { exists = GGR }
+			AND = {
+				NOT = { capital_scope = { region = korea_region } }
+				OR = {
+					NOT = { culture = korean }
+					NOT = { culture = korean_new }
+				}
+			}
+			korea_region = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		
+		provinces_to_highlight = {
+			region = korea_region
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			NOT = { has_reform = shogunate }
+			
+			owns_all_provinces = {
+				region = korea_region
+			}
+		}
+		
+		effect = {
+			add_prestige = 25
+			
+			if = { # Use already existing Korean nation. Prioritize player nation.
+				limit = {
+					any_subject_country = {
+						OR = {
+							primary_culture = korean
+							primary_culture = korean_new
+						}
+						capital_scope = { region = korea_region }
+						ai = no
+					}
+				}
+				random_subject_country = {
+					limit = {
+						OR = {
+							primary_culture = korean
+							primary_culture = korean_new
+						}
+						capital_scope = { region = korea_region }
+						ai = no
+					}
+					korea_region = {
+						cede_province = PREV
+						add_core = PREV
+					}
+					change_tag = GGR
+				}
+			}
+			else_if = { # Use already existing Korean nation. No player nation exists.
+				limit = {
+					any_subject_country = {
+						OR = {
+							primary_culture = korean
+							primary_culture = korean_new
+						}
+						capital_scope = { region = korea_region }
+						ai = yes
+					}
+				}
+				random_subject_country = {
+					limit = {
+						OR = {
+							primary_culture = korean
+							primary_culture = korean_new
+						}
+						capital_scope = { region = korea_region }
+						ai = yes
+					}
+					korea_region = {
+						cede_province = PREV
+						add_core = PREV
+					}
+					change_tag = GGR
+				}
+			}
+			else = { # No already existing nation exists. Make a new one.
+				korea_region = {
+					cede_province = JSN
+					add_core = JSN
+				}
+				JSN = {
+					change_tag = GGR
+				}
+				vassalize = GGR
+			}
+			
+			GGR = {
+				override_country_name = GGR
+				set_country_flag = formed_ggr_flag
+				if = {
+					limit = { has_custom_ideas = no }
+					country_event = { id = ideagroups.1 } #Swap Ideas
+				}
+				add_country_modifier = {
+					name = "centralization_modifier"
+					duration = 7300
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { # Don't unite Korea if we're already conquering the region for ourselves.
+				factor = 0
+				OR = {
+					korea_region = {
+						is_core = ROOT
+						
+						type = all
+					}
+					accepted_culture = korean
+					accepted_culture = korean_new
+				}
+			}
+		}
+		ai_importance = 400
+	}
+	
+	PA_unite_manchuria_subject = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { exists = MCH }
+			AND = {
+				NOT = { capital_scope = { region = manchuria_region } }
+				OR = {
+					NOT = { culture = manchu }
+					NOT = { culture = manchu_new }
+				}
+			}
+			manchuria_region = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		
+		provinces_to_highlight = {
+			region = manchuria_region
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			NOT = { has_reform = shogunate }
+			owns_or_non_sovereign_subject_of = 2108
+			owns_or_non_sovereign_subject_of = 730
+			
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				OR = {
+					culture = manchu_new
+					culture = manchu
+				}
+				value = 20
+			}
+		}
+		
+		effect = {
+			add_prestige = 25
+			
+			if = { # Use already existing Manchu nation. Prioritize player nation.
+				limit = {
+					any_subject_country = {
+						OR = {
+							primary_culture = manchu
+							primary_culture = manchu_new
+						}
+						capital_scope = { region = manchuria_region }
+						ai = no
+					}
+				}
+				random_subject_country = {
+					limit = {
+						OR = {
+							primary_culture = manchu
+							primary_culture = manchu_new
+						}
+						capital_scope = { region = manchuria_region }
+						ai = no
+					}
+					manchuria_region = {
+						limit = { country_or_non_sovereign_subject_holds = ROOT }
+						cede_province = PREV
+						add_core = PREV
+					}
+					change_tag = MCH
+				}
+			}
+			else_if = { # Use already existing Manchu nation. No player nation exists.
+				limit = {
+					any_subject_country = {
+						OR = {
+							primary_culture = manchu
+							primary_culture = manchu_new
+						}
+						capital_scope = { region = manchuria_region }
+						ai = yes
+					}
+				}
+				random_subject_country = {
+					limit = {
+						OR = {
+							primary_culture = manchu
+							primary_culture = manchu_new
+						}
+						capital_scope = { region = manchuria_region }
+						ai = yes
+					}
+					manchuria_region = {
+						limit = { country_or_non_sovereign_subject_holds = ROOT }
+						cede_province = PREV
+						add_core = PREV
+					}
+					change_tag = MCH
+				}
+			}
+			else = { # No already existing nation exists. Make a new one.
+				manchuria_region = {
+					limit = { country_or_non_sovereign_subject_holds = ROOT }
+					cede_province = MCH
+					add_core = MCH
+				}
+				vassalize = MCH
+			}
+			
+			MCH = {
+				override_country_name = MCH
+				set_country_flag = formed_manchu_flag
+				if = {
+					limit = { has_custom_ideas = no }
+					country_event = { id = ideagroups.1 } #Swap Ideas
+				}
+				add_country_modifier = {
+					name = "centralization_modifier"
+					duration = 7300
+				}
+				change_primary_culture = manchu_new
+				set_ruler_culture = manchu_new
+				if = {
+					limit = {
+						has_heir = yes
+					}
+					set_heir_culture = manchu_new
+				}
+				if = {
+					limit = {
+						has_consort = yes
+						consort_culture = manchu
+					}
+					set_consort_culture = manchu_new
+				}
+				hidden_effect = {
+					every_province = {
+						limit = {
+							culture = manchu
+						}
+						change_culture = manchu_new
+					}
+					every_country = {
+						limit = {
+							primary_culture = manchu
+						}
+						change_primary_culture = manchu_new
+						set_ruler_culture = manchu_new
+						if = {
+							limit = {
+								has_heir = yes
+							}
+							set_heir_culture = manchu_new
+						}
+						if = {
+							limit = {
+								has_consort = yes
+								consort_culture = manchu
+							}
+							set_consort_culture = manchu_new
+						}
+					}
+				}
+				custom_tooltip = manchu_culture_tt
+				730 = {
+					move_capital_effect = yes
+				}
+				manchuria_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						is_city = yes
+					}
+					add_core = MCH
+				}
+				swap_non_generic_missions = yes
+				if = {
+					limit = {
+						NOT = { government_rank = 2 }
+					}
+					set_government_rank = 2
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { # Don't unite Manchuria if we're already conquering the region for ourselves.
+				factor = 0
+				OR = {
+					manchuria_region = {
+						is_core = ROOT
+						
+						type = all
+					}
+					accepted_culture = manchu
+					accepted_culture = manchu_new
+				}
+			}
+		}
+		ai_importance = 400
+	}
+
+}
