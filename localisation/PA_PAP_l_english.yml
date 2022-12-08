@@ -1,0 +1,5 @@
+﻿l_english:
+ pa_papal_mission_event.1.t: "Valencia Avenged"
+ pa_papal_mission_event.1.d: "Now that Valencia has been retaken and is under our control, it's up to us to decide what to do with it.\n\nThey could make for a valuable subject, or we could simply keep their lands to ourselves."
+ pa_papal_mission_event.1.a: "They will aid us in the Reconquista."
+ pa_papal_mission_event.1.b: "Lets keep it to ourselves."

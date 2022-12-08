@@ -1,0 +1,52 @@
+namespace = pa_papal_mission_event
+normal_or_historical_nations = yes
+
+# Valencia Avenged. Release Valencia?
+country_event = {
+	id = pa_papal_mission_event.1
+	title = pa_papal_mission_event.1.t
+	desc = pa_papal_mission_event.1.d
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+	
+	# Release valencia as vassal
+	option = {
+		name = pa_papal_mission_event.1.a
+		
+		valencia_area = {
+			limit = { owned_by = ROOT }
+			cede_province = VAL
+			add_core = VAL
+		}
+		
+		vassalize = VAL
+		
+		VAL = {
+			change_religion = catholic
+			set_ruler_religion = catholic
+			set_heir_religion = catholic
+		}
+		
+		catalonia_area = {
+			add_permanent_claim = VAL
+		}
+		
+		aragon_area = {
+			add_permanent_claim = VAL
+		}
+		
+		valencia_area = {
+			add_permanent_claim = VAL
+		}
+		
+		ai_chance = { factor = 100 }
+	}
+	
+	# Nah fuck that who cares
+	option = {
+		name = pa_papal_mission_event.1.b
+		
+		
+	}
+}
