@@ -1,0 +1,97 @@
+country_decisions = {
+	# Andalusia probably shouldn't have access to this decision. It wouldn't really make any sense. Maybe it should be catholic only?
+	PA_move_valencian_fort = {
+		potential = {
+			owns_or_non_sovereign_subject_of = 220 # Valencia
+			owns_or_non_sovereign_subject_of = 2990 # Teruel
+			220 = { has_fort_building_trigger = yes}
+			2990 = { has_fort_building_trigger = no }
+			religion = catholic
+		}
+		allow = {
+			treasury = 15
+			manpower = 1
+		}
+		effect = {
+			add_treasury = -15
+			add_manpower = -1
+		
+			if = {
+				limit = {
+					220 = {
+						is_capital = yes
+						owner = {
+							owns = 2990
+						}
+					}
+				}
+				220 = {
+					owner = {
+						set_capital = 2990
+					}
+				}
+			}
+			
+			220 = {
+				add_unrest = 2
+				add_devastation = 10
+				add_base_manpower = -2
+				if = {
+					limit = {
+						 has_building = fort_15th
+					}
+					remove_building = fort_15th
+					2990 = {
+						add_building = fort_15th
+					}
+				}
+				if = {
+					limit = {
+						 has_building = fort_16th
+					}
+					remove_building = fort_16th
+					2990 = {
+						add_building = fort_16th
+					}
+				}
+				if = {
+					limit = {
+						 has_building = fort_17th
+					}
+					remove_building = fort_17th
+					2990 = {
+						add_building = fort_17th
+					}
+				}
+				if = {
+					limit = {
+						 has_building = fort_18th
+					}
+					remove_building = fort_18th
+					2990 = {
+						add_building = fort_18th
+					}
+				}
+				if = {
+					limit = {
+						 has_building = fort_19th
+					}
+					remove_building = fort_19th
+					2990 = {
+						add_building = fort_19th
+					}
+				}
+			}
+			
+			2990 = {
+				add_base_manpower = 1
+			}
+		}
+		
+		# We like fortnite we like fortnite
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+}

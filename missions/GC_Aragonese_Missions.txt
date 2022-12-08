@@ -1,8 +1,9 @@
-ibemin_first = {
+pa_ibe_east_first = {
 	slot = 1
 	generic = no #if a mission without generic = yes wants this slot then it overrides this.
 	ai = yes
 	potential = {
+		religion = catholic
 		OR = {
 			tag = VAL
 			tag = ARA
@@ -12,9 +13,9 @@ ibemin_first = {
 	}
 	has_country_shield = yes
 
-	ibe_army = {
+	pa_ibe_east_army = {
 	    icon = knights_of_the_new_world
-		required_missions = { ibe_north }
+		required_missions = { pa_ibe_east_east }
 		position = 2
 		
 		trigger = {
@@ -31,9 +32,9 @@ ibemin_first = {
 	}
 	
 	
-	ibe_reconquistador = {
+	pa_ibe_east_reconquistador = {
 	    icon = shield_of_christendom
-		required_missions = { ibe_army }
+		required_missions = { pa_ibe_east_army }
 		position = 4
 		
 		trigger = {
@@ -51,57 +52,46 @@ ibemin_first = {
 	}
 }
 
-ibemin_second = {
+pa_ibe_east_second = {
 	slot = 2
 	generic = no #if a mission without generic = yes wants this slot then it overrides this.
 	ai = yes
 	potential = {
+		religion = catholic
 		OR = {
-			tag = ASU
-			tag = NAV
-			tag = GAL
+			tag = VAL
+			tag = ARA
+			tag = CAT
 		}
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	
-	ibe_north = {
+	# Cities of the East
+	pa_ibe_east_east = {
 	    icon = mission_invade_island
 		required_missions = {  }
 		position = 1
 		
 		provinces_to_highlight = {
 			OR = {
-				area = galicia_area
-				area = asturias_area
-				area = basque_country
-				province_id = 208
-				province_id = 4553
+				province_id = 214
+				province_id = 213
+				province_id = 220
 			}
 			NOT = { owned_by = ROOT }
 		}
 		
 		trigger = {
-			owns = 208
-			owns = 4553
-		    asturias_area = {
-			    type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		    basque_country = {
-			    type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		    galicia_area = {
-			    type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
+			owns = 214
+			owns = 213
+			owns = 220
 		}
 		
 		effect = {
 			add_adm_power = 100
 			add_country_modifier = {
-				name = "ibe_united"
+				name = "ibe_east_united"
 				duration = 7300
 			}
 			iberia_region = {
@@ -222,15 +212,16 @@ ibemin_second = {
 	}
 }
 
-ibemin_third = {
+pa_ibe_east_third = {
 	slot = 3
 	generic = no #if a mission without generic = yes wants this slot then it overrides this.
 	ai = yes
 	potential = {
+		religion = catholic
 		OR = {
-			tag = ASU
-			tag = NAV
-			tag = GAL
+			tag = VAL
+			tag = ARA
+			tag = CAT
 		}
 		NOT = { map_setup = map_setup_random }
 	}
@@ -295,15 +286,16 @@ ibemin_third = {
 	}
 }
 
-ibemin_fourth = {
+pa_ibe_east_fourth = {
 	slot = 4
 	generic = no #if a mission without generic = yes wants this slot then it overrides this.
 	ai = yes
 	potential = {
+		religion = catholic
 		OR = {
-			tag = ASU
-			tag = NAV
-			tag = GAL
+			tag = VAL
+			tag = ARA
+			tag = CAT
 		}
 		NOT = { map_setup = map_setup_random }
 	}
@@ -362,15 +354,16 @@ ibemin_fourth = {
 	}
 }
 
-ibemin_fifth = {
+pa_ibe_east_fifth = {
 	slot = 5
 	generic = no #if a mission without generic = yes wants this slot then it overrides this.
 	ai = yes
 	potential = {
+		religion = catholic
 		OR = {
-			tag = ASU
-			tag = NAV
-			tag = GAL
+			tag = VAL
+			tag = ARA
+			tag = CAT
 		}
 		NOT = { map_setup = map_setup_random }
 	}

@@ -1,0 +1,3 @@
+ibe_east_united = {
+	global_autonomy = -0.05
+}
