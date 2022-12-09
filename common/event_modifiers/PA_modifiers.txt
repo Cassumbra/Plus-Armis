@@ -1,3 +1,14 @@
+# Country
 ibe_east_united = {
 	global_autonomy = -0.05
+}
+
+# Provincial
+ibe_east_north = {
+	local_core_creation = -0.10
+}
+
+ibe_east_lisboa = {
+	local_ship_cost = -0.2
+	ship_recruit_speed = -0.30
 }

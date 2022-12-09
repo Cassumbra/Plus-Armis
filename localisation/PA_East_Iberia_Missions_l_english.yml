@@ -1,0 +1,34 @@
+﻿l_english:
+#First Column
+ pa_ibe_east_army_title:0 "Prepare for Reconquista"
+ pa_ibe_east_army_desc:0 "Even though we were officially defeated in the Andalusian crusade, our enemy suffered terrible losses. Let us gather our brave men and prepare to struck a blow of mercy to the occupants of Iberia."
+ pa_ibe_east_reconquistador_title:0 "Reconquistadors"
+ pa_ibe_east_reconquistador_desc:0 "We must prove that our army is a professional unit filling the hearts of Muslims with fear."
+#Second Column
+ pa_ibe_east_east_title:0 "Cities of the East"
+ pa_ibe_east_east_desc:0 "Zaragoza, Barcelona, and Valencia are cities crucial to our holy mission. We cannot truly progress until we have taken them into our hands and taken up refuge behind the mountains of the Iberian Chain."
+ pa_ibe_east_north_title:0 "Strike North"
+ pa_ibe_east_north_desc:0 "We must begin securing the north of the peninsula. The Muslims cannot be allowed to hold hostage the Christian kingdoms of Iberia."
+ pa_ibe_east_galicia_title:0 "Into Galicia"
+ pa_ibe_east_galicia_desc:0 "The North is nearly ours. All we need is one final push."
+ pa_ibe_east_tide_title:0 "Turn the Tide"
+ pa_ibe_east_tide_desc:0 "After centuries of slavery and life as a second class citizens, the Christians of Iberia finally control most of the peninsula. With the tide turned in our favor, we shall march on Cordoba and seek retalation for the suffering our nation had experienced over the centuries."
+#Third Column
+ pa_ibe_east_west_title:0 "Strike West"
+ pa_ibe_east_west_desc:0 "We must move past the gaurd of the mountains and strike at the heart of Al-Andalus. Castille will be liberated!"
+ pa_ibe_east_atlantic_title:0 "To the Atlantic"
+ pa_ibe_east_atlantic_desc:0 "To deny the Muslims access to the North, we must first march to the Atlantic. No more will the kingdoms of the North be at threat of Muslim invasion."
+ pa_ibe_east_lisboa_title:0 "March on Lisboa"
+ pa_ibe_east_lisboa_desc:0 "The north has been secured. Let us now march southwards towards the town of Lixbuna, the town of the famous Caliph's imperial dockyard."
+#Fourth Column
+ pa_ibe_east_fleet_title:0 "Construct a Fleet"
+ pa_ibe_east_fleet_desc:0 "Our coastal towns occupy a great strategic position on the Atlantic coast. We must construct a fleet there as designate them as a primary base for our naval operations and expansion over the seas."
+ pa_ibe_east_quest_title:0 "Quest for the New World"
+ pa_ibe_east_quest_desc:0 "Across the Atlantic lies land much like our own. To colonize it and bring it under our nation would be the only natural course of action."
+ pa_ibe_east_make_colony_title:0 "Establish a Colony"
+ pa_ibe_east_make_colony_desc:0 "After months of travelling, we have finally reached the New World, the place where we shall build our first colony."
+#Fifth Column
+ pa_ibe_east_ally_title:0 "Christian Alliances"
+ pa_ibe_east_ally_desc:0 "Muslims might seek revenge for the Andalusian crusade. We must safeguard our country diplomatically by forging new alliances with foreign Christian powers."
+ pa_ibe_east_hre_title:0 "Join the Empire"
+ pa_ibe_east_hre_desc:0 "Nobody else but the Emperor of the Holy Roman Empire can grant us sufficient protection. We must do all we can to officially enter the Empire."
