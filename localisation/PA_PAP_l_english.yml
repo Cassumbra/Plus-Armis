@@ -12,3 +12,5 @@
  PA_PAP_VALENCIA_VASSAL: "[pap_avenge_valencia_bonus] If we own any part of @VAL §Y[VAL.GetName]§!, we will get the choice to release them as a loyal Catholic subject."
  PA_PAP_EXTRA_NAVAL_BASE: "[pap_naval_base_bonus] If we have destroyed @SIC §Y[SIC.GetName]§! and taken their Italian holdings, we will also receive:"
  PA_PAP_EXTEND_NAVAL_BASE: "\nWhile the below modifier remains, if we build a shipyard in each province it exists in, we may make the modifier permanent through a decision.\n"
+ PA_PAP_NAVAL_BASE_DECISION_ALLOW: "We must build a shipyard in every province with the "Papal Naval Base" modifier to take this decision."
+ PA_PAP_NAVAL_BASE_DECISION_EFFECT: "Our naval bases will become permanent fixtures of the provinces they are present in."

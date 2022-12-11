@@ -105,12 +105,15 @@ country_decisions = {
 			has_country_flag = PA_PAP_naval_bases_established
 		}
 		allow = {
-			all_owned_province = {
-				OR = {
-					NOT = { has_province_modifier = pap_naval_base }
-					AND = {
-						has_province_modifier = pap_naval_base
-						has_shipyard_building_trigger = yes
+			custom_trigger_tooltip = {
+				tooltip = PA_PAP_NAVAL_BASE_DECISION_ALLOW
+				all_owned_province = {
+					OR = {
+						NOT = { has_province_modifier = pap_naval_base_modifier }
+						AND = {
+							has_province_modifier = pap_naval_base_modifier
+							has_shipyard_building_trigger = yes
+						}
 					}
 				}
 			}
@@ -118,21 +121,21 @@ country_decisions = {
 		provinces_to_highlight = {
 			all_owned_province = {
 				AND = {
-					has_province_modifier = pap_naval_base
+					has_province_modifier = pap_naval_base_modifier
 					NOT = { has_shipyard_building_trigger = yes }
 				}
 			}
 		}
 		effect = {
-		
+			custom_tooltip = PA_PAP_NAVAL_BASE_DECISION_EFFECT
 			hidden_effect = {
 				every_owned_province = {
 					limit = {
-						has_province_modifier = pap_naval_base
+						has_province_modifier = pap_naval_base_modifier
 					}
-					remove_province_modifier = pap_naval_base
+					remove_province_modifier = pap_naval_base_modifier
 					add_permanent_province_modifier = {
-						name = pap_naval_base
+						name = pap_naval_base_modifier
 						duration = -1
 					}
 				}

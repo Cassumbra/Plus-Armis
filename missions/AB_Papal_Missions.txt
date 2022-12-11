@@ -582,7 +582,7 @@ ap_papal_2 = {
 				}
 			
 			
-				set_country_flag = PA_pap_naval_bases_established
+				set_country_flag = PA_PAP_naval_bases_established
 			}
 		}
 	}
