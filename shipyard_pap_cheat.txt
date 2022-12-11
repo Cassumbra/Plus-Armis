@@ -1,0 +1,7 @@
+add_treasury = 10
+every_owned_province = {
+	#limit = {
+	#	has_province_modifier = pap_naval_base
+	#}
+	add_building = shipyard
+}

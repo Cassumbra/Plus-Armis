@@ -1,6 +1,14 @@
 ﻿l_english:
+#Missions
+ pap_naval_base_title: "Establish Papal Naval Bases"
+ pap_naval_base_desc: "Now that we have Sardinia- and Corsica...- we have the perfect place to stage an invasion of Iberia. We will take the matter of the Reconquista into our own hands, if we have to."
+#Events
  pa_papal_mission_event.1.t: "Valencia Avenged"
  pa_papal_mission_event.1.d: "Now that Valencia has been retaken and is under our control, it's up to us to decide what to do with it.\n\nThey could make for a valuable subject, or we could simply keep their lands to ourselves."
  pa_papal_mission_event.1.a: "They will aid us in the Reconquista."
  pa_papal_mission_event.1.b: "I shall handle the Reconquista personally."
  pa_papal_mission_event.1.c: "Lets keep it to ourselves."
+#Tooltips
+ PA_PAP_VALENCIA_VASSAL: "[pap_avenge_valencia_bonus] If we own any part of @VAL §Y[VAL.GetName]§!, we will get the choice to release them as a loyal Catholic subject."
+ PA_PAP_EXTRA_NAVAL_BASE: "[pap_naval_base_bonus] If we have destroyed @SIC §Y[SIC.GetName]§! and taken their Italian holdings, we will also receive:"
+ PA_PAP_EXTEND_NAVAL_BASE: "\nWhile the below modifier remains, if we build a shipyard in each province it exists in, we may make the modifier permanent through a decision.\n"

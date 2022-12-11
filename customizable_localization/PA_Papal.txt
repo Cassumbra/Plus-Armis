@@ -1,0 +1,38 @@
+#pap_naval_base
+defined_text = {
+	name = pap_naval_base_bonus
+	random = no
+
+	text = {
+		localisation_key = AB_yes
+		trigger = {
+			owns = 4975
+			owns = 124
+			owns = 125
+			owns = 126
+			NOT = { exists = SIC }
+		}
+	}
+	text = {
+		localisation_key = AB_no
+	}
+}
+
+#pap_avenge_valencia
+defined_text = {
+	name = pap_avenge_valencia_bonus
+	random = no
+
+	text = {
+		localisation_key = AB_yes
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 1
+				area = valencia_area
+			}
+		}
+	}
+	text = {
+		localisation_key = AB_no
+	}
+}

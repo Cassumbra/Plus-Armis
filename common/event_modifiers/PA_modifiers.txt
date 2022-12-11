@@ -12,3 +12,7 @@ ibe_east_lisboa = {
 	local_ship_cost = -0.2
 	ship_recruit_speed = -0.30
 }
+
+pap_naval_base_modifier = {
+	local_own_coast_naval_combat_bonus = 1
+}

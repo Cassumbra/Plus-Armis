@@ -188,7 +188,12 @@ ap_papal_1 = {
 			custom_tooltip = PA_PAP_VALENCIA_VASSAL
 			hidden_effect = {
 				if = {
-					limit = { owns = 220 }
+					limit = { 
+						num_of_owned_provinces_with = {
+							value = 1
+							area = valencia_area
+						}
+					}
 					country_event = { 
 						id = pa_papal_mission_event.1
 					}
@@ -401,7 +406,7 @@ ap_papal_2 = {
 	pap_naval_power = {
 		icon = build_a_roman_navy
 		required_missions = { pap_catholic_alliances }
-		position = 4
+		position = 4	
 		
 		trigger = {
 			navy_size_percentage = 1
@@ -439,35 +444,145 @@ ap_papal_2 = {
 		}
 	}
 	
-	pap_crush_republics = {
-		icon = secure_the_republic
-		required_missions = { pap_patrimony }
+	pap_naval_base_modifier = {
+		#TODO: Use some kind of port icon? Or boat
+		icon = build_a_roman_navy
+		required_missions = { pap_naval_power }
 		position = 5
-
+		
 		provinces_to_highlight = {
 			OR = {
-				area = venetia_area
-				area = liguria_area
+				area = corsica_sardinia_area
+				province_id = 4975
+				province_id = 124
+				province_id = 125
+				province_id = 126
 			}
 			NOT = { owned_by = ROOT }
 		}
 		
 		trigger = {
-		    venetia_area = {
-			    type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		    liguria_area = {
-			    type = all
+			corsica_sardinia_area = {
+				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		
 		effect = {
-			add_treasury = 500
-			add_country_modifier = {
-				name = pap_control_republics
-				duration = 9125
+			baleares_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			valencia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			catalonia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			aragon_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			
+			custom_tooltip = PA_PAP_EXTEND_NAVAL_BASE
+			
+			127 = {
+				add_province_modifier = {
+					name = pap_naval_base_modifier
+					duration = 7300
+				}
+			}
+			4735 = {
+				add_province_modifier = {
+					name = pap_naval_base_modifier
+					duration = 7300
+				}
+			}
+			2986 = {
+				add_province_modifier = {
+					name = pap_naval_base_modifier
+					duration = 7300
+				}
+			}
+			
+			custom_tooltip = PA_PAP_EXTRA_NAVAL_BASE
+			tooltip = {
+				4975 = {
+					add_province_modifier = {
+						name = pap_naval_base_modifier
+						duration = 7300
+					}
+				}
+				124 = {
+					add_province_modifier = {
+						name = pap_naval_base_modifier
+						duration = 7300
+					}
+				}
+				125 = {
+					add_province_modifier = {
+						name = pap_naval_base_modifier
+						duration = 7300
+					}
+				}
+				126 = {
+					add_province_modifier = {
+						name = pap_naval_base_modifier
+						duration = 7300
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						owns = 4975
+						owns = 124
+						owns = 125
+						owns = 126
+						NOT = { exists = SIC }
+					}
+					4975 = {
+						add_province_modifier = {
+							name = pap_naval_base_modifier
+							duration = 7300
+						}
+					}
+					124 = {
+						add_province_modifier = {
+							name = pap_naval_base_modifier
+							duration = 7300
+						}
+					}
+					125 = {
+						add_province_modifier = {
+							name = pap_naval_base_modifier
+							duration = 7300
+						}
+					}
+					126 = {
+						add_province_modifier = {
+							name = pap_naval_base_modifier
+							duration = 7300
+						}
+					}
+				}
+			
+			
+				set_country_flag = PA_pap_naval_base_modifiers_established
 			}
 		}
 	}
@@ -873,9 +988,42 @@ ap_papal_3 = {
 		}
 	}
 	
+	pap_crush_republics = {
+		icon = secure_the_republic
+		required_missions = { pap_patrimony }
+		position = 5
+
+		provinces_to_highlight = {
+			OR = {
+				area = venetia_area
+				area = liguria_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+		    venetia_area = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		    liguria_area = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			add_treasury = 500
+			add_country_modifier = {
+				name = pap_control_republics
+				duration = 9125
+			}
+		}
+	}
+	
 	pap_kingdom_god = {
 		icon = spread_piety
-		required_missions = { pap_patrimony pap_crush_republics }
+		required_missions = { pap_crush_republics }
 		position = 6
 
 		provinces_to_highlight = {
