@@ -1,0 +1,8 @@
+# I'd like some diplo actions to convert subjects between vassals and papal vassals, but not quite sure how to go about doing that.
+# Oh well. Maybe later.
+
+#PA_vassal_to_papal_vassal = {
+#	category = influence
+#	
+#	
+#}

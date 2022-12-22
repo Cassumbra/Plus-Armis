@@ -1,0 +1,15 @@
+PA_create_subject = {
+	if = {
+		limit = {
+			tag = PAP
+		}
+		create_subject = {
+			subject_type = PA_papal_subject
+			subject = $TAG$
+		}
+		$TAG$ = {
+			set_ruler_religion = catholic
+			change_religion = catholic
+		}
+	}
+}

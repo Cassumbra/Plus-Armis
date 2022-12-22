@@ -20,7 +20,10 @@ country_event = {
 			add_core = VAL
 		}
 		
-		vassalize = VAL
+		create_subject = {
+			subject_type = PA_papal_subject
+			subject = VAL
+		}
 		
 		VAL = {
 			change_religion = catholic

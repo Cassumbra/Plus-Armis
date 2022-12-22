@@ -1,0 +1,7 @@
+PA_papal_subject = {
+	copy_from = vassal
+	
+	takes_diplo_slot = no
+	can_be_annexed = no
+	relative_power_class = 1
+}

@@ -1,6 +1,6 @@
 country_decisions = {
 	
-	PA_unite_poland_subject = {
+	PA_unite_iberia_subject = {
 		major = yes
 		potential = {
 			normal_or_historical_nations = yes
@@ -8,21 +8,25 @@ country_decisions = {
 				ai = no
 				is_playing_custom_nation = no
 			}
-			NOT = { exists = PLC }
-			NOT = { exists = POL }
+			NOT = { exists = IBE }
 			AND = {
-				NOT = { capital_scope = { region = poland_region } }
+				NOT = { capital_scope = { region = iberia_region } }
 				OR = {
-					NOT = { culture = schlesian }
-					NOT = { culture = pommeranian }
-					NOT = { culture = polish }
-					NOT = { culture = Polan }
-					NOT = { culture = Mazovian }
-					NOT = { culture = Lendian }
-					NOT = { culture = Vistulan }
+					NOT = { culture = Asturain 	      }
+					NOT = { culture = iberian_culture }
+					NOT = { culture = castillian      }
+					NOT = { culture = leonese         }
+					NOT = { culture = aragonese       }
+					NOT = { culture = catalan         }
+					NOT = { culture = Valencian       }
+					NOT = { culture = galician        }
+					NOT = { culture = andalucian      }
+					NOT = { culture = Lusitanian      }
+					NOT = { culture = basque          }
 				}
 			}
-			poland_region = {
+			NOT = { religion_group = muslim }
+			iberia_region = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 			OR = {
@@ -44,14 +48,14 @@ country_decisions = {
 		
 		provinces_to_highlight = {
 			OR = {
-				province_id = 262	# Krakow
-				province_id = 257	# Warszawa
-				province_id = 4528	# Kujawy
-				province_id = 4526
-				province_id = 258	# Sieradz
-				province_id = 259	# Sandomierz
-				province_id = 1939	# Leczyca
-				province_id = 260
+				province_id = 213	# Barcelona
+				province_id = 214	# Aragón
+				province_id = 215	# Castilla La Vieja
+				province_id = 216	# Salamanca
+				province_id = 219	# Toledo
+				province_id = 220	# Valencia
+				province_id = 231
+				province_id = 227
 			}
 			OR = {
 				NOT = { owned_by = ROOT }
@@ -64,175 +68,123 @@ country_decisions = {
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			NOT = { has_reform = shogunate }
-			owns_or_non_sovereign_subject_of = 262	# Krakow
-			owns_or_non_sovereign_subject_of = 257	# Warszawa
-			owns_or_non_sovereign_subject_of = 254	# Poznan
-			owns_or_non_sovereign_subject_of = 4526
-			owns_or_non_sovereign_subject_of = 258	# Sieradz
-			owns_or_non_sovereign_subject_of = 259	# Sandomierz
-			owns_or_non_sovereign_subject_of = 1939	# Leczyca
-			owns_or_non_sovereign_subject_of = 260
+			owns_or_non_sovereign_subject_of = 213	# Barcelona
+			owns_or_non_sovereign_subject_of = 214	# Aragón
+			owns_or_non_sovereign_subject_of = 215	# Castilla La Vieja
+			owns_or_non_sovereign_subject_of = 216	# Salamanca
+			owns_or_non_sovereign_subject_of = 219	# Toledo
+			owns_or_non_sovereign_subject_of = 220	# Valencia
+			owns_or_non_sovereign_subject_of = 231
+			owns_or_non_sovereign_subject_of = 227
 		}
 		
 		effect = {
 			add_prestige = 25
 			
-			if = { # Use already existing Polish nation. Prioritize player nation.
+			if = { # Use already existing nation. Prioritize player nation.
 				limit = {
 					any_subject_country = {
 						OR = {
-							primary_culture = polish
-							primary_culture = Polan
-							primary_culture = Mazovian
-							primary_culture = Lendian
-							primary_culture = Vistulan
+							primary_culture = Asturain 	     
+							primary_culture = iberian_culture
+							primary_culture = castillian     
+							primary_culture = leonese        
+							primary_culture = aragonese      
+							primary_culture = catalan        
+							primary_culture = Valencian      
+							primary_culture = galician       
+							primary_culture = andalucian     
+							primary_culture = Lusitanian     
+							primary_culture = basque        
 						}
-						capital_scope = { region = poland_region }
+						capital_scope = { region = iberia_region }
 						ai = no
 					}
 				}
 				random_subject_country = {
 					limit = {
 						OR = {
-							primary_culture = polish
-							primary_culture = Polan
-							primary_culture = Mazovian
-							primary_culture = Lendian
-							primary_culture = Vistulan
+							primary_culture = Asturain 	     
+							primary_culture = iberian_culture
+							primary_culture = castillian     
+							primary_culture = leonese        
+							primary_culture = aragonese      
+							primary_culture = catalan        
+							primary_culture = Valencian      
+							primary_culture = galician       
+							primary_culture = andalucian     
+							primary_culture = Lusitanian     
+						    primary_culture = basque      
 						}
-						capital_scope = { region = poland_region }
+						capital_scope = { region = iberia_region }
 						ai = no
 					}
-					wielkopolska_area = {
+					iberia_region = {
 						limit = { country_or_non_sovereign_subject_holds = ROOT }
-						cede_province = POL
-						add_core = POL
+						cede_province = IBE
+						add_core = IBE
 					}
-					malopolska_area = {
-						limit = { country_or_non_sovereign_subject_holds = ROOT }
-						cede_province = POL
-						add_core = POL
-					}	
-					mazovia_area = {
-						limit = { country_or_non_sovereign_subject_holds = ROOT }
-						cede_province = POL
-						add_core = POL
-					}
-					central_poland_area = {
-						limit = { country_or_non_sovereign_subject_holds = ROOT }
-						cede_province = POL
-						add_core = POL
-					}
-					sandomierz_area = {
-						limit = { country_or_non_sovereign_subject_holds = ROOT }
-						cede_province = POL
-						add_core = POL
-					}
-					kuyavia_area = {
-						limit = { country_or_non_sovereign_subject_holds = ROOT }
-						cede_province = POL
-						add_core = POL
-					}
-					change_tag = POL
+					change_tag = IBE
 				}
 			}
-			else_if = { # Use already existing Korean nation. No player nation exists.
+			else_if = { # Use already existing nation. No player nation exists.
 				limit = {
 					any_subject_country = {
 						OR = {
-							primary_culture = polish
-							primary_culture = Polan
-							primary_culture = Mazovian
-							primary_culture = Lendian
-							primary_culture = Vistulan
+							primary_culture = Asturain 	     
+							primary_culture = iberian_culture
+							primary_culture = castillian     
+							primary_culture = leonese        
+							primary_culture = aragonese      
+							primary_culture = catalan        
+							primary_culture = Valencian      
+							primary_culture = galician       
+							primary_culture = andalucian     
+							primary_culture = Lusitanian     
+						    primary_culture = basque      
 						}
-						capital_scope = { region = poland_region }
+						capital_scope = { region = iberia_region }
 						ai = yes
 					}
 				}
 				random_subject_country = {
 					limit = {
 						OR = {
-							primary_culture = polish
-							primary_culture = Polan
-							primary_culture = Mazovian
-							primary_culture = Lendian
-							primary_culture = Vistulan
+							primary_culture = Asturain 	     
+							primary_culture = iberian_culture
+							primary_culture = castillian     
+							primary_culture = leonese        
+							primary_culture = aragonese      
+							primary_culture = catalan        
+							primary_culture = Valencian      
+							primary_culture = galician       
+							primary_culture = andalucian     
+							primary_culture = Lusitanian     
+						    primary_culture = basque      
 						}
-						capital_scope = { region = poland_region }
+						capital_scope = { region = iberia_region }
 						ai = yes
 					}
-					wielkopolska_area = {
+					iberia_region = {
 						limit = { country_or_non_sovereign_subject_holds = ROOT }
-						cede_province = POL
-						add_core = POL
+						cede_province = IBE
+						add_core = IBE
 					}
-					malopolska_area = {
-						limit = { country_or_non_sovereign_subject_holds = ROOT }
-						cede_province = POL
-						add_core = POL
-					}	
-					mazovia_area = {
-						limit = { country_or_non_sovereign_subject_holds = ROOT }
-						cede_province = POL
-						add_core = POL
-					}
-					central_poland_area = {
-						limit = { country_or_non_sovereign_subject_holds = ROOT }
-						cede_province = POL
-						add_core = POL
-					}
-					sandomierz_area = {
-						limit = { country_or_non_sovereign_subject_holds = ROOT }
-						cede_province = POL
-						add_core = POL
-					}
-					kuyavia_area = {
-						limit = { country_or_non_sovereign_subject_holds = ROOT }
-						cede_province = POL
-						add_core = POL
-					}
-					change_tag = POL
+					change_tag = IBE
 				}
 			}
 			else = { # No already existing nation exists. Make a new one.
-				wielkopolska_area = {
+				iberia_region = {
 					limit = { country_or_non_sovereign_subject_holds = ROOT }
-					cede_province = POL
-					add_core = POL
-				}
-				malopolska_area = {
-					limit = { country_or_non_sovereign_subject_holds = ROOT }
-					cede_province = POL
-					add_core = POL
-				}
-				mazovia_area = {
-					limit = { country_or_non_sovereign_subject_holds = ROOT }
-					cede_province = POL
-					add_core = POL
-				}
-				central_poland_area = {
-					limit = { country_or_non_sovereign_subject_holds = ROOT }
-					cede_province = POL
-					add_core = POL
-				}
-				sandomierz_area = {
-					limit = { country_or_non_sovereign_subject_holds = ROOT }
-					cede_province = POL
-					add_core = POL
-				}
-				kuyavia_area = {
-					limit = { country_or_non_sovereign_subject_holds = ROOT }
-					cede_province = POL
-					add_core = POL
+					cede_province = IBE
+					add_core = IBE
 				}
 				
-				vassalize = POL
+				vassalize = IBE
 			}
 			
-			POL = {
-				override_country_name = POL
-				set_country_flag = formed_pol_flag
+			IBE = {
+				override_country_name = IBE
 				if = {
 					limit = { has_custom_ideas = no }
 					country_event = { id = ideagroups.1 } #Swap Ideas
@@ -243,54 +195,54 @@ country_decisions = {
 				}
 				swap_non_generic_missions = yes
 				remove_non_electors_emperors_from_empire_effect = yes
+				lose_reforms = 8
 				if = {
 					limit = { NOT = { government_rank = 2 } }
 					set_government_rank = 2
 				}
-				if = {
-					limit = {
-						NOT = {
-							primary_culture = polish
+				hidden_effect = {
+					iberia_region = {
+						limit = {
+							NOT = { area = alentejo_area }
+							NOT = { area = beieras_area }
 						}
+						add_permanent_claim = IBE
 					}
-					change_primary_culture = polish
-				}
-				every_province = {
-					limit = {
-						OR = {
-							culture = Mazovian
-							culture = Lendian
-							culture = Vistulan
-							culture = Polan
-						}
-					}
-					change_culture = polish
 				}
 				if = {
 					limit = {
 						government = monarchy
-							is_revolutionary = no
+						is_revolutionary = no
 					}
-					add_government_reform = crownpoland
+					add_government_reform = iberian_crown
 				}
+				set_country_flag = formed_iberia_flag
 			}
+			
+			PA_create_subject = { TAG = IBE }
 		}
 		
 		ai_will_do = {
 			factor = 1
-			modifier = { # Don't unite Poland if we're already conquering the region for ourselves.
+			modifier = { # Don't unite if we're already conquering the region for ourselves.
 				factor = 0
 				OR = {
-					poland_region = {
+					iberia_region = {
 						is_core = ROOT
 						
 						type = all
 					}
-					primary_culture = polish
-					primary_culture = Polan
-					primary_culture = Mazovian
-					primary_culture = Lendian
-					primary_culture = Vistulan
+					primary_culture = Asturain 	     
+					primary_culture = iberian_culture
+					primary_culture = castillian     
+					primary_culture = leonese        
+					primary_culture = aragonese      
+					primary_culture = catalan        
+					primary_culture = Valencian      
+					primary_culture = galician       
+					primary_culture = andalucian     
+					primary_culture = Lusitanian     
+					primary_culture = basque      
 				}
 			}
 		}

@@ -1,0 +1,302 @@
+country_decisions = {
+	
+	PA_unite_poland_subject = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { exists = PLC }
+			NOT = { exists = POL }
+			AND = {
+				NOT = { capital_scope = { region = poland_region } }
+				OR = {
+					NOT = { culture = schlesian }
+					NOT = { culture = pommeranian }
+					NOT = { culture = polish }
+					NOT = { culture = Polan }
+					NOT = { culture = Mazovian }
+					NOT = { culture = Lendian }
+					NOT = { culture = Vistulan }
+				}
+			}
+			poland_region = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 262	# Krakow
+				province_id = 257	# Warszawa
+				province_id = 4528	# Kujawy
+				province_id = 4526
+				province_id = 258	# Sieradz
+				province_id = 259	# Sandomierz
+				province_id = 1939	# Leczyca
+				province_id = 260
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			NOT = { has_reform = shogunate }
+			owns_or_non_sovereign_subject_of = 262	# Krakow
+			owns_or_non_sovereign_subject_of = 257	# Warszawa
+			owns_or_non_sovereign_subject_of = 254	# Poznan
+			owns_or_non_sovereign_subject_of = 4526
+			owns_or_non_sovereign_subject_of = 258	# Sieradz
+			owns_or_non_sovereign_subject_of = 259	# Sandomierz
+			owns_or_non_sovereign_subject_of = 1939	# Leczyca
+			owns_or_non_sovereign_subject_of = 260
+		}
+		
+		effect = {
+			add_prestige = 25
+			
+			if = { # Use already existing Polish nation. Prioritize player nation.
+				limit = {
+					any_subject_country = {
+						OR = {
+							primary_culture = polish
+							primary_culture = Polan
+							primary_culture = Mazovian
+							primary_culture = Lendian
+							primary_culture = Vistulan
+						}
+						capital_scope = { region = poland_region }
+						ai = no
+					}
+				}
+				random_subject_country = {
+					limit = {
+						OR = {
+							primary_culture = polish
+							primary_culture = Polan
+							primary_culture = Mazovian
+							primary_culture = Lendian
+							primary_culture = Vistulan
+						}
+						capital_scope = { region = poland_region }
+						ai = no
+					}
+					wielkopolska_area = {
+						limit = { country_or_non_sovereign_subject_holds = ROOT }
+						cede_province = POL
+						add_core = POL
+					}
+					malopolska_area = {
+						limit = { country_or_non_sovereign_subject_holds = ROOT }
+						cede_province = POL
+						add_core = POL
+					}	
+					mazovia_area = {
+						limit = { country_or_non_sovereign_subject_holds = ROOT }
+						cede_province = POL
+						add_core = POL
+					}
+					central_poland_area = {
+						limit = { country_or_non_sovereign_subject_holds = ROOT }
+						cede_province = POL
+						add_core = POL
+					}
+					sandomierz_area = {
+						limit = { country_or_non_sovereign_subject_holds = ROOT }
+						cede_province = POL
+						add_core = POL
+					}
+					kuyavia_area = {
+						limit = { country_or_non_sovereign_subject_holds = ROOT }
+						cede_province = POL
+						add_core = POL
+					}
+					change_tag = POL
+				}
+			}
+			else_if = { # Use already existing Korean nation. No player nation exists.
+				limit = {
+					any_subject_country = {
+						OR = {
+							primary_culture = polish
+							primary_culture = Polan
+							primary_culture = Mazovian
+							primary_culture = Lendian
+							primary_culture = Vistulan
+						}
+						capital_scope = { region = poland_region }
+						ai = yes
+					}
+				}
+				random_subject_country = {
+					limit = {
+						OR = {
+							primary_culture = polish
+							primary_culture = Polan
+							primary_culture = Mazovian
+							primary_culture = Lendian
+							primary_culture = Vistulan
+						}
+						capital_scope = { region = poland_region }
+						ai = yes
+					}
+					wielkopolska_area = {
+						limit = { country_or_non_sovereign_subject_holds = ROOT }
+						cede_province = POL
+						add_core = POL
+					}
+					malopolska_area = {
+						limit = { country_or_non_sovereign_subject_holds = ROOT }
+						cede_province = POL
+						add_core = POL
+					}	
+					mazovia_area = {
+						limit = { country_or_non_sovereign_subject_holds = ROOT }
+						cede_province = POL
+						add_core = POL
+					}
+					central_poland_area = {
+						limit = { country_or_non_sovereign_subject_holds = ROOT }
+						cede_province = POL
+						add_core = POL
+					}
+					sandomierz_area = {
+						limit = { country_or_non_sovereign_subject_holds = ROOT }
+						cede_province = POL
+						add_core = POL
+					}
+					kuyavia_area = {
+						limit = { country_or_non_sovereign_subject_holds = ROOT }
+						cede_province = POL
+						add_core = POL
+					}
+					change_tag = POL
+				}
+			}
+			else = { # No already existing nation exists. Make a new one.
+				wielkopolska_area = {
+					limit = { country_or_non_sovereign_subject_holds = ROOT }
+					cede_province = POL
+					add_core = POL
+				}
+				malopolska_area = {
+					limit = { country_or_non_sovereign_subject_holds = ROOT }
+					cede_province = POL
+					add_core = POL
+				}
+				mazovia_area = {
+					limit = { country_or_non_sovereign_subject_holds = ROOT }
+					cede_province = POL
+					add_core = POL
+				}
+				central_poland_area = {
+					limit = { country_or_non_sovereign_subject_holds = ROOT }
+					cede_province = POL
+					add_core = POL
+				}
+				sandomierz_area = {
+					limit = { country_or_non_sovereign_subject_holds = ROOT }
+					cede_province = POL
+					add_core = POL
+				}
+				kuyavia_area = {
+					limit = { country_or_non_sovereign_subject_holds = ROOT }
+					cede_province = POL
+					add_core = POL
+				}
+				
+				vassalize = POL
+			}
+			
+			POL = {
+				override_country_name = POL
+				set_country_flag = formed_pol_flag
+				if = {
+					limit = { has_custom_ideas = no }
+					country_event = { id = ideagroups.1 } #Swap Ideas
+				}
+				add_country_modifier = {
+					name = "centralization_modifier"
+					duration = 7300
+				}
+				swap_non_generic_missions = yes
+				remove_non_electors_emperors_from_empire_effect = yes
+				if = {
+					limit = { NOT = { government_rank = 2 } }
+					set_government_rank = 2
+				}
+				if = {
+					limit = {
+						NOT = {
+							primary_culture = polish
+						}
+					}
+					change_primary_culture = polish
+				}
+				every_province = {
+					limit = {
+						OR = {
+							culture = Mazovian
+							culture = Lendian
+							culture = Vistulan
+							culture = Polan
+						}
+					}
+					change_culture = polish
+				}
+				if = {
+					limit = {
+						government = monarchy
+							is_revolutionary = no
+					}
+					add_government_reform = crownpoland
+				}
+			}
+			
+			PA_create_subject = { TAG = POL }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { # Don't unite Poland if we're already conquering the region for ourselves.
+				factor = 0
+				OR = {
+					poland_region = {
+						is_core = ROOT
+						
+						type = all
+					}
+					primary_culture = polish
+					primary_culture = Polan
+					primary_culture = Mazovian
+					primary_culture = Lendian
+					primary_culture = Vistulan
+				}
+			}
+		}
+		ai_importance = 400
+	}
+
+}

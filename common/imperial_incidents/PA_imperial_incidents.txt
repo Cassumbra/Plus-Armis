@@ -1,7 +1,3 @@
-# AB {{{
-# comment it out, Ante Bellum universe has a more aggressive
-# muslim in South Italy and Iberia which prevents the Italian
-# city-states to even think about leaving
 pa_incident_shadow_kingdom = {
 	event = PA_shadow_kingdom.2
 	default_option = 0
