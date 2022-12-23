@@ -150,4 +150,57 @@ country_decisions = {
 		}
 		ai_importance = 400
 	}
+	
+	PA_principality_fort = {
+		potential = {
+			has_mission = tr_independence
+			NOT = { mission_completed = tr_independence }
+			NOT = { has_country_flag = PA_principality_fort_raised }
+		}
+		allow = {
+			OR = {
+				capital = {
+					province_has_current_tech_fort_trigger = yes
+				}
+				AND = {
+					manpower = 3
+					treasury = 75
+				}
+				AND = {
+					any_owned_province = {
+						is_capital = no
+						province_has_current_tech_fort_trigger = yes
+					}
+					manpower = 1
+					treasury = 25
+				}
+				
+			}
+		}
+		effect = {
+			if = {
+				trigger = {
+					capital = {
+						province_has_current_tech_fort_trigger = no
+					}
+				}
+				country_event = { 
+					id = pa_misc_event.1
+				}
+			}
+			
+			set_country_flag = PA_principality_fort_raised
+			capital = {
+				region = {
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+
+		# Do decision so can do mission >:)
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
 }

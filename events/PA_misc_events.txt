@@ -1,0 +1,71 @@
+namespace = pa_misc_event
+normal_or_historical_nations = yes
+
+# Construct capital fort (Principality)
+country_event = {
+	id = pa_misc_event.1
+	title = pa_misc_event.1.t
+	desc = pa_misc_event.1.d
+	picture = FORT_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = pa_misc_event.1.a
+		limit = {
+			capital = {
+				has_building = fort_15th
+			}
+			any_owned_province = {
+				is_capital = no
+				has_building = fort_15th
+			}
+			manpower = 1
+			treasury = 25
+		}
+		
+		random_owned_province = {
+			limit = {
+				has_building = fort_15th
+			}
+			remove_building = fort_15th
+		}
+		add_manpower = -1
+		add_treasury = -25
+		capital = {
+			add_building = fort_15th
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+			
+	}
+	option = {
+		name = pa_misc_event.1.b
+		trigger = {
+			capital = {
+				has_building = fort_15th
+			}
+			manpower = 3
+			treasury = 75
+		}
+		
+		add_manpower = -3
+		add_treasury = -75
+		capital = {
+			upgrade_fort_building
+		}
+		
+		ai_chance = {
+			factor = 100 
+			modifier = {
+				factor = 0
+				any_owned_province = {
+					is_capital = no
+					has_building = fort_15th
+				}
+			}
+		}
+	}
+}

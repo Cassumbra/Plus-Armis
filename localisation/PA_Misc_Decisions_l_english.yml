@@ -1,5 +1,3 @@
 ﻿l_english:
- PA_move_valencian_fort_title: "Move Valencian fort to Teruel"
- PA_move_valencian_fort_desc: "My, wouldn't this fort look just lovely on that mountain over there?"
- PA_PAP_naval_base_title: "Galvanize Papal Naval Bases"
- PA_PAP_naval_base_desc: "We ought to keep a firm grip on our hold of the Mediterranean. If we build them up properly, our naval bases will last a long time."
+ PA_principality_fort_title: "Construct Capital Fort"
+ PA_principality_fort_desc: "A capital fort will help us project power in our region and protect our rule." 
