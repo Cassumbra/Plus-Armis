@@ -606,10 +606,8 @@ ab_poland_3 = {
 		position = 1
 		
 		trigger = { 
-			num_of_owned_provinces_with = {
-				value = 12
-				region = poland_region
-			}
+			army_size_percentage = 0.8
+			num_of_generals = 1
 		}
 		
 		provinces_to_highlight = {

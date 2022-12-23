@@ -159,8 +159,8 @@ country_decisions = {
 		}
 		allow = {
 			OR = {
-				capital = {
-					province_has_current_tech_fort_trigger = yes
+				capital_scope = {
+					has_building = fort_15th
 				}
 				AND = {
 					manpower = 3
@@ -169,7 +169,7 @@ country_decisions = {
 				AND = {
 					any_owned_province = {
 						is_capital = no
-						province_has_current_tech_fort_trigger = yes
+						has_building = fort_15th
 					}
 					manpower = 1
 					treasury = 25
@@ -179,19 +179,19 @@ country_decisions = {
 		}
 		effect = {
 			if = {
-				trigger = {
-					capital = {
-						province_has_current_tech_fort_trigger = no
+				limit = {
+					capital_scope = {
+						NOT = { has_building = fort_15th }
 					}
 				}
-				country_event = { 
+				country_event = {
 					id = pa_misc_event.1
 				}
 			}
 			
 			set_country_flag = PA_principality_fort_raised
-			capital = {
-				region = {
+			capital_scope = {
+				area = {
 					add_permanent_claim = ROOT
 				}
 			}

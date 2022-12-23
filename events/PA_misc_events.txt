@@ -13,7 +13,7 @@ country_event = {
 	option = {
 		name = pa_misc_event.1.a
 		limit = {
-			capital = {
+			capital_scope = {
 				has_building = fort_15th
 			}
 			any_owned_province = {
@@ -32,7 +32,7 @@ country_event = {
 		}
 		add_manpower = -1
 		add_treasury = -25
-		capital = {
+		capital_scope = {
 			add_building = fort_15th
 		}
 		
@@ -44,7 +44,7 @@ country_event = {
 	option = {
 		name = pa_misc_event.1.b
 		trigger = {
-			capital = {
+			capital_scope = {
 				has_building = fort_15th
 			}
 			manpower = 3
@@ -53,7 +53,7 @@ country_event = {
 		
 		add_manpower = -3
 		add_treasury = -75
-		capital = {
+		capital_scope = {
 			upgrade_fort_building
 		}
 		

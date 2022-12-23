@@ -57,15 +57,12 @@ sty_first = {
 		position = 3
 		
 		trigger = {
-			country_or_non_sovereign_subject_holds = 73
+			owns_or_non_sovereign_subject_of = 73
 			NOT = { exists = TIR }
 		}
 		
 		provinces_to_highlight = {
-			OR = {
-				area = tirol_area
-
-			}
+			province_id = 73
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		
