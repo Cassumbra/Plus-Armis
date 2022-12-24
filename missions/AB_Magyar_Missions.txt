@@ -181,7 +181,7 @@ mgy_second_group = {
 		position = 1
 		
 		trigger = {
-			army_size_percentage = 1
+			army_size_percentage = 0.8
 			num_of_generals = 1
 		}
 		
@@ -925,15 +925,46 @@ mgy_fifth_group = {
 		}
 		
 		trigger = {
-			owns = 4126
-			owns = 158
-			owns = 162
+			#hidden_trigger = {
+				OR = {
+					AND = {
+						owns = 4126
+						owns = 158
+						owns = 162
+					}
+					AND = {
+						ai = yes
+						reverse_has_opinion = {
+							who = UNG
+							value = 150
+						}
+						reverse_has_opinion = {
+							who = BCS
+							value = 150
+						}
+						reverse_has_opinion = {
+							who = SZK
+							value = 150
+						}
+					}
+				}
+			#}
+			
+			
 		}
 		
 		effect = {
 			add_country_modifier = {
 				name = "mgy_tribes"
 				duration = 5475
+			}
+			if = {
+				limit = {
+					ai = yes
+				}
+				inherit = UNG
+				inherit = BCS
+				inherit = SZK
 			}
 		}
 	}
