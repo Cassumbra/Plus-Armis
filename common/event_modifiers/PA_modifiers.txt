@@ -3,6 +3,10 @@ ibe_east_united = {
 	global_autonomy = -0.05
 }
 
+pa_arelat_disunion = {
+	diplomatic_reputation = -20
+}
+
 # Provincial
 ibe_east_north = {
 	local_core_creation = -0.10
