@@ -1,0 +1,4 @@
+add_country_modifier = {
+	name = pa_lateran_treaty
+	duration = -1
+}

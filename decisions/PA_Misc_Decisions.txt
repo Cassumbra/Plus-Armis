@@ -208,30 +208,37 @@ country_decisions = {
 		major = yes
 	
 		potential = {
-			has_country_modifier = catholic_rome
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 1
+				region = italy_region
+			}
 			NOT = { has_country_modifier = pa_law_gaurantees }
 		}
 		allow = {
+			has_country_modifier = catholic_rome
+			
 			OR = {
 				AND = {
 					adm_power = 100
 					government_reform_progress = 50
-					OR = {
-						tag = ITA
-						was_tag = ITA
-						tag = CAP
-						was_tag = CAP
-					}
+					culture_group = latin
+					#OR = {
+					#	tag = ITA
+					#	was_tag = ITA
+					#	tag = CAP
+					#	was_tag = CAP
+					#}
 				}
 				AND = {
 					adm_power = 300
 					government_reform_progress = 150
-					NOT = { OR = {
-						tag = ITA
-						was_tag = ITA
-						tag = CAP
-						was_tag = CAP
-					} }
+					NOT = { culture_group = latin }
+					#NOT = { OR = {
+					#	tag = ITA
+					#	was_tag = ITA
+					#	tag = CAP
+					#	was_tag = CAP
+					#} }
 				}
 			}
 			
@@ -239,12 +246,13 @@ country_decisions = {
 		effect = {
 			if = {
 				limit = {
-					OR = {
-						tag = ITA
-						was_tag = ITA
-						tag = CAP
-						was_tag = CAP
-					}
+					culture_group = latin
+					#OR = {
+					#	tag = ITA
+					#	was_tag = ITA
+					#	tag = CAP
+					#	was_tag = CAP
+					#}
 				}
 				add_adm_power = -100
 				change_government_reform_progress = -50
@@ -284,34 +292,37 @@ country_decisions = {
 				AND = {
 					dip_power = 100
 					treasury = 1000
-					OR = {
-						tag = ITA
-						was_tag = ITA
-						tag = CAP
-						was_tag = CAP
-					}
+					culture_group = latin
+					#OR = {
+					#	tag = ITA
+					#	was_tag = ITA
+					#	tag = CAP
+					#	was_tag = CAP
+					#}
 				}
 				AND = {
 					dip_power = 300
 					treasury = 1000
-					NOT = { OR = {
-						tag = ITA
-						was_tag = ITA
-						tag = CAP
-						was_tag = CAP
-					} }
+					NOT = { culture_group = latin }
+					#NOT = { OR = {
+					#	tag = ITA
+					#	was_tag = ITA
+					#	tag = CAP
+					#	was_tag = CAP
+					#} }
 				}
 			}
 		}
 		effect = {
 			if = {
 				limit = {
-					OR = {
-						tag = ITA
-						was_tag = ITA
-						tag = CAP
-						was_tag = CAP
-					}
+					culture_group = latin
+					#OR = {
+					#	tag = ITA
+					#	was_tag = ITA
+					#	tag = CAP
+					#	was_tag = CAP
+					#}
 				}
 				add_dip_power = -100
 			}
