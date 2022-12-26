@@ -1,3 +1,8 @@
 ﻿l_english:
  PA_principality_fort_title: "Construct Capital Fort"
- PA_principality_fort_desc: "A capital fort will help us project power in our region and protect our rule." 
+ PA_principality_fort_desc: "A capital fort will help us project power in our region and protect our rule."
+ PA_pass_law_gaurantees_title: "Pass Law of Gaurantees"
+ PA_pass_law_gaurantees_desc: "We should enshrine the sovereignty of the Vatican into law to ease the worries of our citizens and the leaders of other Catholic nations. The Vatican may not accept this, but perhaps we can get them to change their minds eventually."
+ PA_REMOVE_OCCUPATION_ROME: "The "Occupation of Rome" modifier will be removed. \nWe will be able to come to an agreement with the Vatican 20 years after passing this law."
+ PA_negotiate_lateran_treaty_title: "Negotiate Lateran Treaty"
+ PA_negotiate_lateran_treaty_desc: "It seems the Vatican is willing to negotiate with us and end their so-called "Imprisonment". They are demanding financial compensation for the loss of their temporal property- a large expense for us to pay. \nComing to terms with the Vatican will surely give us some nice boons, however."

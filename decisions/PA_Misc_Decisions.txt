@@ -203,4 +203,146 @@ country_decisions = {
 		}
 		ai_importance = 400
 	}
+	
+	PA_pass_law_gaurantees = {
+		major = yes
+	
+		potential = {
+			has_country_modifier = catholic_rome
+			NOT = { has_country_modifier = pa_law_gaurantees }
+		}
+		allow = {
+			OR = {
+				AND = {
+					adm_power = 100
+					government_reform_progress = 50
+					OR = {
+						tag = ITA
+						was_tag = ITA
+						tag = CAP
+						was_tag = CAP
+					}
+				}
+				AND = {
+					adm_power = 300
+					government_reform_progress = 150
+					NOT = { OR = {
+						tag = ITA
+						was_tag = ITA
+						tag = CAP
+						was_tag = CAP
+					} }
+				}
+			}
+			
+		}
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						tag = ITA
+						was_tag = ITA
+						tag = CAP
+						was_tag = CAP
+					}
+				}
+				add_adm_power = -100
+				change_government_reform_progress = -50
+			}
+			else = {
+				add_adm_power = -300
+				change_government_reform_progress = -150
+			}
+			
+			add_country_modifier = {
+				name = pa_law_gaurantees
+				duration = -1
+			}
+			set_country_flag = PA_PASSED_LAW_GAURANTEES
+			custom_tooltip = PA_REMOVE_OCCUPATION_ROME
+		}
+
+		# Make country sexer
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	PA_negotiate_lateran_treaty = {
+		major = yes
+		
+		potential = {
+			had_country_flag = {
+				flag = PA_PASSED_LAW_GAURANTEES
+				days = 7300
+			}
+			NOT = { has_country_modifier = pa_lateran_treaty }
+		}
+		allow = {
+			OR = {
+				AND = {
+					dip_power = 100
+					treasury = 1000
+					OR = {
+						tag = ITA
+						was_tag = ITA
+						tag = CAP
+						was_tag = CAP
+					}
+				}
+				AND = {
+					dip_power = 300
+					treasury = 1000
+					NOT = { OR = {
+						tag = ITA
+						was_tag = ITA
+						tag = CAP
+						was_tag = CAP
+					} }
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						tag = ITA
+						was_tag = ITA
+						tag = CAP
+						was_tag = CAP
+					}
+				}
+				add_dip_power = -100
+			}
+			else = {
+				add_dip_power = -300
+			}
+			
+			add_treasury = -1000
+			
+			remove_country_modifier = pa_law_gaurantees
+			add_country_modifier = {
+				name = pa_lateran_treaty
+				duration = -1
+			}
+			
+			if = {
+				limit = {
+					exists = PAP
+				}
+				PAP = {
+					add_treasury = 1000
+					add_historical_friend = ROOT
+				}
+				add_historical_friend = PAP
+			}
+		}
+
+		# Make country sexer
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
 }
