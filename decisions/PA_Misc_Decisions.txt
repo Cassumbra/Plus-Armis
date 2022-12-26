@@ -356,4 +356,125 @@ country_decisions = {
 		}
 		ai_importance = 400
 	}
+
+	PA_revive_roman_culture = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			NOT = { has_country_flag = restored_rome_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			OR = {
+				is_free_or_tributary_trigger = yes
+				ai = no
+			}
+			NOT = { tag = ROM }
+			NOT = { tag = PAP }
+			NOT = { exists = ROM }
+			OR = {
+				religion_group = christian
+				religion_group = pagan
+			}
+			OR = {
+				tag = CAP
+				was_tag = CAP
+				tag = FRC
+				was_tag = FRC
+				tag = HLR
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = italy_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		allow = {
+			italy_region = {
+				type = all
+				owned_by = ROOT
+			}
+			118 = {
+				is_state = yes
+				development = 50
+				num_of_buildings_in_province = 8
+				OR = {
+					has_owner_accepted_culture = yes
+					has_owner_culture = yes
+				}
+			}
+			OR = {
+				AND = {
+					dynasty = "de Hauteville"
+					tag = ITA
+				}
+				dynasty = "Carolingian"
+				tag = HLR
+			}
+			government_reform_progress = 150
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+		}
+		effect = {
+			change_government_reform_progress = -150
+			118 = {
+				move_capital_effect = yes
+			}
+			restore_country_name_effect = yes
+			change_tag = ROM
+			#custom_tooltip = roman_culture_provinces_tooltip
+			custom_tooltip = PA_ROMAN_CULTURE_TT
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						culture_group = latin
+					}
+					change_culture = roman
+				}
+			}
+			change_primary_culture = roman
+			custom_tooltip = restore_roman_empire_tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					set_in_empire = no
+				}
+			}
+			set_government_rank = 3
+			add_prestige = 50
+			add_core = 118 # Rome
+			#if = {
+			#	limit = {
+			#		is_part_of_hre = yes
+			#		is_elector = no
+			#	}
+			#	every_owned_province = {
+			#		limit = {
+			#			is_part_of_hre = yes
+			#		}
+			#		set_in_empire = no
+			#	}
+			#}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_country_flag = restored_rome_flag
+		}
+		# Why not ?????
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
 }
+
