@@ -3,7 +3,11 @@ ibe_east_united = {
 	global_autonomy = -0.05
 }
 
-pa_arelat_disunion = {
+pa_arelat_disunion_upb = {
+	diplomatic_reputation = -10
+}
+
+pa_arelat_disunion_lwb = {
 	diplomatic_reputation = -20
 }
 
@@ -31,6 +35,11 @@ pa_lateran_treaty = {
 	#cb_on_religious_enemies = yes
 	#enforce_religion_cost = -0.5
 	religion = yes
+}
+
+pa_legacy_trinacria = {
+	liberty_desire = 20
+	diplomatic_reputation = 3
 }
 
 # Provincial

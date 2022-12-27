@@ -53,7 +53,8 @@ country_decisions = {
 
 		}
 		effect = {
-			remove_country_modifier = pa_arelat_disunion
+			remove_country_modifier = pa_arelat_disunion_upb
+			remove_country_modifier = pa_arelat_disunion_lwb
 			if = {
 				limit = { NOT = { government_rank = 2 } }
 				set_government_rank = 2
