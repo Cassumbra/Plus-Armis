@@ -145,7 +145,7 @@ country_decisions = {
 					korea_region = {
 						is_core = ROOT
 						
-						type = all
+						#type = all
 					}
 					accepted_culture = korean
 					accepted_culture = korean_new
@@ -367,7 +367,7 @@ country_decisions = {
 					manchuria_region = {
 						is_core = ROOT
 						
-						type = all
+						#type = all
 					}
 					accepted_culture = manchu
 					accepted_culture = manchu_new

@@ -230,7 +230,7 @@ country_decisions = {
 					iberia_region = {
 						is_core = ROOT
 						
-						type = all
+						#type = all
 					}
 					primary_culture = Asturain 	     
 					primary_culture = iberian_culture

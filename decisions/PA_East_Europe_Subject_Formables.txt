@@ -286,7 +286,7 @@ country_decisions = {
 					poland_region = {
 						is_core = ROOT
 						
-						type = all
+						#type = all
 					}
 					primary_culture = polish
 					primary_culture = Polan
