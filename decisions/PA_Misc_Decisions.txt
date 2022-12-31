@@ -384,6 +384,10 @@ country_decisions = {
 				was_tag = FRC
 				tag = HLR
 			}
+			num_of_owned_provinces_with = {
+				value = 1
+				region = italy_region
+			}
 		}
 		provinces_to_highlight = {
 			OR = {
